@@ -1,8 +1,7 @@
-
 package DTO;
 
-
 public class AgendaDTO {
+
     private String nome, sobrenome;
     private int id_agenda;
 
@@ -47,5 +46,5 @@ public class AgendaDTO {
     public void setId_agenda(int id_agenda) {
         this.id_agenda = id_agenda;
     }
-    
+
 }

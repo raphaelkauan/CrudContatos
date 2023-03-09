@@ -61,46 +61,46 @@ public class AgendaDAO {
         }
         return lista;
     }
-    
-    public void alterarAgenda(AgendaDTO objagenda){
+
+    public void alterarAgenda(AgendaDTO objagenda) {
         String sql = "update contatos set nome = ?, sobrenome = ? where id = ?";
-        
+
         conn = new ConexaoDAO().conectaBD();
-        
+
         try {
-            
+
             pstm = conn.prepareStatement(sql);
             pstm.setString(1, objagenda.getNome());
-            pstm.setString(2,objagenda.getSobrenome());
-            pstm.setInt(3,objagenda.getId_agenda());
-            
+            pstm.setString(2, objagenda.getSobrenome());
+            pstm.setInt(3, objagenda.getId_agenda());
+
             pstm.execute();
             pstm.close();
-            
+
         } catch (SQLException erro) {
-            
+
             JOptionPane.showMessageDialog(null, "Agenda Alterar" + erro);
         }
     }
-    
+
     public void excluirFuncionario(AgendaDTO objagenda) {
         String sql = "delete from contatos where id = ?";
-        
+
         conn = new ConexaoDAO().conectaBD();
-        
+
         try {
-            
+
             pstm = conn.prepareStatement(sql);
-            
-            pstm.setInt(1,objagenda.getId_agenda());
-            
+
+            pstm.setInt(1, objagenda.getId_agenda());
+
             pstm.execute();
             pstm.close();
-            
+
         } catch (SQLException erro) {
-            
+
             JOptionPane.showMessageDialog(null, "Agenda Excluir" + erro);
         }
     }
-    
+
 }
