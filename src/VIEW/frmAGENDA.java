@@ -211,7 +211,7 @@ public class frmAGENDA extends javax.swing.JFrame {
     }//GEN-LAST:event_txtNomeActionPerformed
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
-        CadastrarFuncionario();
+        CadastrarAgenda();
         listarValoresAgenda();
         LimparCampos();
     }//GEN-LAST:event_btnCadastrarActionPerformed
@@ -229,7 +229,7 @@ public class frmAGENDA extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLimparActionPerformed
 
     private void btnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarActionPerformed
-        AlterarFuncionario();
+        AlterarAgenda();
         listarValoresAgenda();
         LimparCampos();
     }//GEN-LAST:event_btnAlterarActionPerformed
@@ -322,7 +322,7 @@ public class frmAGENDA extends javax.swing.JFrame {
         txtSobrenome.setText(tabelaAgenda.getModel().getValueAt(setar, 2).toString());
     }
     
-    private void CadastrarFuncionario() {
+    private void CadastrarAgenda() {
         String nome, sobrenome;
 
         nome = txtNome.getText();
@@ -343,7 +343,7 @@ public class frmAGENDA extends javax.swing.JFrame {
         txtNome.requestFocus();
     }
     
-    private void AlterarFuncionario() {
+    private void AlterarAgenda() {
         int id_agenda;
         String nome_agenda, sobrenome_agenda;
         

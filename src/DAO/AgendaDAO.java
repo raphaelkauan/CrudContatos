@@ -79,7 +79,7 @@ public class AgendaDAO {
             
         } catch (SQLException erro) {
             
-            JOptionPane.showMessageDialog(null, "Funcionario Alterar" + erro);
+            JOptionPane.showMessageDialog(null, "Agenda Alterar" + erro);
         }
     }
     
@@ -99,7 +99,7 @@ public class AgendaDAO {
             
         } catch (SQLException erro) {
             
-            JOptionPane.showMessageDialog(null, "Funcionario Excluir" + erro);
+            JOptionPane.showMessageDialog(null, "Agenda Excluir" + erro);
         }
     }
     
