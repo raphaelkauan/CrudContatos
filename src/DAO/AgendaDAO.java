@@ -35,10 +35,9 @@ public class AgendaDAO {
 
             JOptionPane.showMessageDialog(null, "AgendaDAO Cadastrar" + erro);
         }
-
     }
 
-    public ArrayList<AgendaDTO> PesquisarAgenda() {
+    public ArrayList<AgendaDTO> pesquisarAgenda() {
         String sql = "select * from contatos";
 
         conn = new ConexaoDAO().conectaBD();
@@ -83,7 +82,7 @@ public class AgendaDAO {
         }
     }
 
-    public void excluirFuncionario(AgendaDTO objagenda) {
+    public void excluirAgenda(AgendaDTO objagenda) {
         String sql = "delete from contatos where id = ?";
 
         conn = new ConexaoDAO().conectaBD();
@@ -102,5 +101,5 @@ public class AgendaDAO {
             JOptionPane.showMessageDialog(null, "Agenda Excluir" + erro);
         }
     }
-
+    
 }

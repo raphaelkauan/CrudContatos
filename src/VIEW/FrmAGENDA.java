@@ -212,11 +212,11 @@ public class FrmAGENDA extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
     private void btnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarActionPerformed
-        listarValoresAgenda(); 
+        listarValoresAgenda();
     }//GEN-LAST:event_btnPesquisarActionPerformed
 
     private void btnCarregarCamposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCarregarCamposActionPerformed
-        carregarCampos(); 
+        carregarCampos();
     }//GEN-LAST:event_btnCarregarCamposActionPerformed
 
     private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
@@ -295,7 +295,7 @@ public class FrmAGENDA extends javax.swing.JFrame {
             DefaultTableModel model = (DefaultTableModel) tabelaAgenda.getModel();
             model.setNumRows(0);
 
-            ArrayList<AgendaDTO> lista = objagendadao.PesquisarAgenda();
+            ArrayList<AgendaDTO> lista = objagendadao.pesquisarAgenda();
 
             for (int num = 0; num < lista.size(); num++) {
                 model.addRow(new Object[]{
@@ -312,12 +312,12 @@ public class FrmAGENDA extends javax.swing.JFrame {
 
     private void carregarCampos() {
         int setar = tabelaAgenda.getSelectedRow();
-        
+
         txtCodigo.setText(tabelaAgenda.getModel().getValueAt(setar, 0).toString());
         txtNome.setText(tabelaAgenda.getModel().getValueAt(setar, 1).toString());
         txtSobrenome.setText(tabelaAgenda.getModel().getValueAt(setar, 2).toString());
     }
-    
+
     private void cadastrarAgenda() {
         String nome, sobrenome;
 
@@ -331,40 +331,41 @@ public class FrmAGENDA extends javax.swing.JFrame {
         AgendaDAO objagendadao = new AgendaDAO();
         objagendadao.cadastrarAgenda(objagendadto);
     }
-    
+
     private void limparCampos() {
         txtCodigo.setText("");
         txtNome.setText("");
         txtSobrenome.setText("");
         txtNome.requestFocus();
     }
-    
+
     private void alterarAgenda() {
         int id_agenda;
         String nome_agenda, sobrenome_agenda;
-        
+
         id_agenda = Integer.parseInt(txtCodigo.getText());
         nome_agenda = txtNome.getText();
         sobrenome_agenda = txtSobrenome.getText();
-        
+
         AgendaDTO objagendadto = new AgendaDTO();
         objagendadto.setId_agenda(id_agenda);
         objagendadto.setNome(nome_agenda);
         objagendadto.setSobrenome(sobrenome_agenda);
-        
+
         AgendaDAO objagenda = new AgendaDAO();
         objagenda.alterarAgenda(objagendadto);
     }
-    
+
     private void excluirAgenda() {
         int id_agenda;
-        
+
         id_agenda = Integer.parseInt(txtCodigo.getText());
-        
+
         AgendaDTO objagendadto = new AgendaDTO();
         objagendadto.setId_agenda(id_agenda);
-        
+
         AgendaDAO objagendadao = new AgendaDAO();
-        objagendadao.excluirFuncionario(objagendadto);
+        objagendadao.excluirAgenda(objagendadto);
     }
+    
 }
